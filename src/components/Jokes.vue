@@ -27,8 +27,8 @@ export default {
   mounted() {
     Buffer
     this.getRandomJoke()
-    this.getJokeById()
   },
+
   methods: {
     async getRandomJoke() {
       try {
@@ -46,6 +46,7 @@ export default {
       }
     },
     async getJokeById(jokeId) {
+      debugger
       try {
         const response = await fetch(`https://icanhazdadjoke.com/j/${jokeId}`, {
           headers: {
@@ -59,17 +60,15 @@ export default {
         alert("Error fetching jokes")
       }
     },
-    addtoFavs(id) {
-      if (id) {
-        this.getJokeById(id)
-        if (!this.favJokesList.includes(id)) {
-          this.favJokesList.push({
-            id: this.jokeId,
-            joke: this.gotJokeById
-          })
-        }
+
+    async addtoFavs(id) {
+      await this.getJokeById(id)
+      if (!this.favJokesList.includes(id)) {
+        this.favJokesList.push({
+          id: this.jokeId,
+          joke: this.gotJokeById
+        })
       }
-      console.log(this.favJokesList)
     }
   },
 }
