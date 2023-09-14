@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-stone-950	">
-    <h1 class="text-4xl font-bold tracking-tight text-white-900 sm:text-6xl">Chuckles with Dad</h1>
+  <div class="w-full flex flex-col items-center justify-between space-y-8">
+    <h1 class="mt-40 font-bold tracking-tight text-white-900 sm:text-6xl">Chuckles with Dad</h1>
     <Jokes/>
 </div>
 </template>
@@ -15,6 +15,6 @@ export default{
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

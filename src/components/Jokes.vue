@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
-            <div class="mx-auto max-w-xs px-8">
+    <div class="py-10 text-center lg:flex lg:flex-col lg:justify-center lg:py-16 space-x-1.5">
+            <div class="mx-auto max-w-xs px-5">
               <p class="text-base font-semibold text-gray-600 gap-x-2">{{ getJoke }}</p>
-              <button class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="getRandomJoke">New Joke</button>
-              <button class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="addToFavs(jokeId)"> Favorite Jokes</button>
+                <div class="flex flex-row my-10">
+                  <button class="flex mx-2.5 w-full justify-center rounded-md bg-indigo-600 px-1.5 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="getRandomJoke">New Joke</button>
+                  <button class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="addToFavs(jokeId)"> Favorite Jokes</button>
+                </div>
             </div>
           </div>
-    <ul role="list" class="divide-y divide-red-300" v-for="fav in favJokesList" :key="fav.id">
-      <li class="flex justify-between gap-x-6 py-5">{{ fav.joke }}</li>
+          <div class="h-48 overflow-y-scroll">
+    <ul role="list" class="divide-y divide-red-300 bg-white bg-opacity-40 rounded-full my-3" v-for="fav in favJokesList" :key="fav.id">
+      <li class="flex justify-between mx-3 py-2 font-semibold  text-indigo-600">{{ fav.joke }}</li>
     </ul>
+  </div>
   </div>
 </template>
 
