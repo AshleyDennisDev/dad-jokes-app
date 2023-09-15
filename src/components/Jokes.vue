@@ -2,9 +2,9 @@
   <div>
     <div class="py-10 text-center lg:flex lg:flex-col lg:justify-center lg:py-16 space-x-1.5">
             <div class="mx-auto max-w-xs px-5">
-              <p class="text-base font-semibold text-gray-600 gap-x-2">{{ getJoke }}</p>
-                <div class="flex flex-row my-10">
-                  <button class="flex mx-2.5 w-full justify-center rounded-md bg-indigo-600 px-1.5 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="getRandomJoke">New Joke</button>
+              <p class="text-base font-semibold text-gray-600 text-left text-sm md:text-xl md:text-center">{{ getJoke }}</p>
+                <div class="flex flex-col my-10 md:flex-row">
+                  <button class="flex mx-0 my-4 md:mx-2.5 md:my-0 w-full justify-center rounded-md bg-indigo-600 px-1.5 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="getRandomJoke">New Joke</button>
                   <button class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" @click="addToFavs(jokeId)"> Favorite Jokes</button>
                 </div>
             </div>
